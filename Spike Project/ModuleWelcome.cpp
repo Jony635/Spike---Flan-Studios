@@ -132,13 +132,14 @@ bool ModuleWelcome::CleanUp() {
 	LOG("Unloading welcome scene");
 
 	//Unload textures
-	App->textures->Unload(ExitOption);
+	if(ExitOption!=nullptr) App->textures->Unload(ExitOption);
 	ExitOption = nullptr;
-	App->textures->Unload(Area2Option);
+	if(Area2Option!=nullptr) App->textures->Unload(Area2Option);
 	Area2Option = nullptr;
-
+	if(font_high_score!=-1)
 	App->fonts->UnLoad(font_high_score);
 	font_high_score = -1;
+	if (font_welcome_score != -1)
 	App->fonts->UnLoad(font_welcome_score);
 	font_welcome_score = -1;
 

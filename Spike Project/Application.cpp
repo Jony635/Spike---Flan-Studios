@@ -52,8 +52,8 @@ bool Application::Init()
 	bool ret = true;
 
 	// Deactivate modules here ----
+	welcome->Disable();
 	enemies->Disable();
-	lvl2->Disable();
 	collision->Disable();
 	powerup->Disable();
 	particles->Disable();
