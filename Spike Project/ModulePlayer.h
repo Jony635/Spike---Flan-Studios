@@ -85,7 +85,7 @@ public:
 	bool respawn = false;
 	bool godmode = false;
 	bool shortgodmode = false;
-	bool PlayerPowerUps[PowerUp_Types::MAX_POWERUP_TYPE] = { false, false, false, false, false, false, false, false , false , false, false, false};
+	
 	bool soundhighscore = true;
 	bool win = false;
 	bool winsound = true;

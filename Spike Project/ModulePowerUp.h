@@ -17,7 +17,6 @@ struct PowerUp
 	Collider* collider = nullptr;
 	Animation anim;
 	iPoint position;
-	PowerUp_Types type;
 	bool fx_played = false;
 	bool hidden = false;
 	char* label = "null";
@@ -38,7 +37,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 
-	PowerUp* AddPowerUp(const PowerUp_Types type, int x, int y, bool hidden = false, char* label = "null");
+	PowerUp* AddPowerUp(int x, int y, bool hidden = false, char* label = "null");
 
 	Animation binocular;
 	Animation bulletproof_vest;

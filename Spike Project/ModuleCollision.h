@@ -35,7 +35,6 @@ struct Collider
 	COLLIDER_TYPE type;
 	Module* callback = nullptr;
 	ENEMY_TYPES enemytype = ENEMY_TYPES::NO_TYPE;
-	PowerUp_Types poweruptype = PowerUp_Types::POWERUP_NO_TYPE;
 	Collider(SDL_Rect rectangle, COLLIDER_TYPE type, Module* callback = nullptr) :
 		rect(rectangle),
 		type(type),

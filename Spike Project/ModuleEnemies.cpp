@@ -187,11 +187,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 						switch (spawn_Bag_Barrel)
 						{
 						case 0:
-							App->powerup->AddPowerUp(PowerUp_Types::BAG, enemies[i]->position.x, enemies[i]->position.y);
-							break;
+						
 						case 7:
-							App->powerup->AddPowerUp(PowerUp_Types::BARREL, enemies[i]->position.x, enemies[i]->position.y);
-							break;
+						
 						default:
 							break;
 						}
@@ -210,10 +208,8 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 						switch (spawn_Bag_Barrel)
 						{
 						case 0:
-							App->powerup->AddPowerUp(PowerUp_Types::BAG, enemies[i]->position.x, enemies[i]->position.y);
 							break;
 						case 1:
-							App->powerup->AddPowerUp(PowerUp_Types::BARREL, enemies[i]->position.x, enemies[i]->position.y);
 							break;
 						default:
 							break;
@@ -239,10 +235,8 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					switch (spawn_Bag_Barrel)
 					{
 					case 0:
-						App->powerup->AddPowerUp(PowerUp_Types::BAG, enemies[i]->position.x, enemies[i]->position.y);
 						break;
 					case 1:
-						App->powerup->AddPowerUp(PowerUp_Types::BARREL, enemies[i]->position.x, enemies[i]->position.y);
 						break;
 					default:
 						break;

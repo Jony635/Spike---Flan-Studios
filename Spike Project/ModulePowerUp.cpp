@@ -114,46 +114,7 @@ update_status ModulePowerUp::Update()
 	{
 		if (powerups[i] != nullptr && !powerups[i]->hidden)
 		{
-			if (powerups[i]->type == PowerUp_Types::BINOCULAR)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &binocular.GetCurrentFrame());
-			}
-			else if (powerups[i]->type == PowerUp_Types::BULLETPROOF_VEST)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &bulletproof_vest.GetCurrentFrame());
-			}
-			else if (powerups[i]->type == PowerUp_Types::GASOLINE)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &gasoline.GetCurrentFrame());
-			}
-			else if (powerups[i]->type == PowerUp_Types::GRENADEx4)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &grenadex4.GetCurrentFrame());
-			}
-			else if (powerups[i]->type == PowerUp_Types::GRENADEx5)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &grenadex5.GetCurrentFrame());
-			}
-			else if (powerups[i]->type == PowerUp_Types::MEDAL_OF_HONOR)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &medal_of_honor.GetCurrentFrame());
-			}
-			else if (powerups[i]->type == PowerUp_Types::MEDAL)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &medal.GetCurrentFrame());
-			}
-			else if (powerups[i]->type == PowerUp_Types::BARREL)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &barrel.GetCurrentFrame());
-			}
-			else if (powerups[i]->type == PowerUp_Types::BAG)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &bag.GetCurrentFrame());
-			}
-			else if (powerups[i]->type == PowerUp_Types::ALLY_CAPTURED)
-			{
-				App->render->Blit(graphics, powerups[i]->position.x, powerups[i]->position.y, &ally_captured.GetCurrentFrame());
-			}
+			
 		}
 	}
 
@@ -161,7 +122,7 @@ update_status ModulePowerUp::Update()
 }
 
 
-PowerUp* ModulePowerUp::AddPowerUp(const PowerUp_Types type, int x, int y, bool hidden, char* label) {
+PowerUp* ModulePowerUp::AddPowerUp(/*const PowerUp_Types type*/ int x, int y, bool hidden, char* label) {
 
 	for (uint i = 0; i < MAX_POWERUP; ++i)
 	{
@@ -171,54 +132,14 @@ PowerUp* ModulePowerUp::AddPowerUp(const PowerUp_Types type, int x, int y, bool 
 			SDL_Rect col;
 			col.x = x;
 			col.y = y;
-			switch(type)
+			switch(1)
 			{
-			case PowerUp_Types::BINOCULAR:
-				col.w = 16;
-				col.h = 16;
-				break;
-			case PowerUp_Types::BULLETPROOF_VEST:
-				col.w = 14;
-				col.h = 14;
-				break;
-			case PowerUp_Types::GASOLINE:
-				col.w = 12;
-				col.h = 15;
-				break;
-			case PowerUp_Types::GRENADEx4:
-				col.w = 23;
-				col.h = 15;
-				break;
-			case PowerUp_Types::GRENADEx5:
-				col.w = 21;
-				col.h = 16;
-				break;
-			case PowerUp_Types::MEDAL_OF_HONOR:
-				col.w = 10;
-				col.h = 16;
-				break;
-			case PowerUp_Types::MEDAL:
-				col.w = 16;
-				col.h = 10;
-				break;
-			case PowerUp_Types::BARREL:
-				col.w = 12;
-				col.h = 16;
-				break;
-			case PowerUp_Types::BAG:
-				col.w = 12;
-				col.h = 15;
-				break;
-			case PowerUp_Types::ALLY_CAPTURED:
-				col.w = 16;
-				col.h = 22;
-				break;
+			
 			}
 			powerup->position.x = x;
 			powerup->position.y = y;
 			powerup->collider = App->collision->AddCollider(col, COLLIDER_POWERUP, this);
-			powerup->collider->poweruptype = type;
-			powerup->type = type;
+			
 			powerup->hidden = hidden;
 			if (label != "null") {
 				powerup->label = label;
@@ -240,87 +161,9 @@ void ModulePowerUp::OnCollision(Collider* c1, Collider* c2)
 			if (c2->type == COLLIDER_PLAYER && !powerups[i]->hidden)
 			{
 				App->audio->PlaySound("Resources/Audio/Sound Effects/Grenades_Powerups Taken.wav");
-				switch (c1->poweruptype)
+				switch (1)
 				{
-				case PowerUp_Types::BINOCULAR:
-					App->player->PlayerPowerUps[PowerUp_Types::BINOCULAR] = true;
-					App->player->PlayerPowerUps[pu_taken_lvl2::binocular] = true;
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
-				case PowerUp_Types::BULLETPROOF_VEST:
-					App->player->PlayerPowerUps[pu_taken_lvl2::godmode] = true;
-					if(!App->player->godmode)
-					App->player->shortgodmode = true;
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
-				case PowerUp_Types::GASOLINE:
-					App->player->score += 1000;
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
-				case PowerUp_Types::GRENADEx4:
-					if (powerups[i]->label == "granade1")
-						App->powerups_taken[pu_taken_lvl2::granade1] = true;
-					if (powerups[i]->label == "granade2")
-						App->powerups_taken[pu_taken_lvl2::granade2] = true;
-					if (powerups[i]->label == "granade3")
-						App->powerups_taken[pu_taken_lvl2::granade3] = true;
-					if (powerups[i]->label == "granade4")
-						App->powerups_taken[pu_taken_lvl2::granade4] = true;
-					App->player->granade_counter += 4;
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
-				case PowerUp_Types::GRENADEx5:
-					App->player->granade_counter += 5;
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
-				case PowerUp_Types::MEDAL_OF_HONOR:
-					App->player->score += 1000;
-					App->player->live_counter += 1;
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
-				case PowerUp_Types::MEDAL:
-					App->player->score += 10000;
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
-				case PowerUp_Types::BARREL:
-					App->player->score += 1000;
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
-				case PowerUp_Types::BAG:
-					App->player->score += 1000;
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
-				case PowerUp_Types::ALLY_CAPTURED:
-					if (powerups[i]->label == "ally1")
-						App->powerups_taken[pu_taken_lvl2::ally1] = true;
-					if (powerups[i]->label == "ally2")
-						App->powerups_taken[pu_taken_lvl2::ally2] = true;
-					if (powerups[i]->label == "hg")
-					if (powerups[i]->label == "mg")
-					App->player->score += 1000;
-					App->enemies->AddEnemy(ENEMY_TYPES::RUNNER, powerups[i]->position.x, powerups[i]->position.y);
-					c1->to_delete = true;
-					delete powerups[i];
-					powerups[i] = nullptr;
-					break;
+				
 				}
 			}
 			else if (c2->type == COLLIDER_PLAYER_GRENADE_EXPL && powerups[i]->hidden)
@@ -338,7 +181,6 @@ void ModulePowerUp::OnCollision(Collider* c1, Collider* c2)
 PowerUp::PowerUp()
 {
 	position.SetToZero();
-	type = PowerUp_Types::POWERUP_NO_TYPE;
 }
 
 PowerUp::~PowerUp()
