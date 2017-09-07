@@ -38,8 +38,6 @@ update_status ModuleFadeToBlack::Update()
 			if(now >= total_time)
 			{
 				to_disable->Disable();
-				if (room != SECRETROOM::NO_ROOM)
-					App->secretareas->actual_room = room;
 				to_enable->Enable();
 				total_time += total_time;
 				start_time = SDL_GetTicks();
@@ -64,11 +62,9 @@ update_status ModuleFadeToBlack::Update()
 }
 
 // Fade to black. At mid point deactivate one module, then activate the other
-bool ModuleFadeToBlack::FadeToBlack(Module* module_off, Module* module_on, float time, SECRETROOM room)
+bool ModuleFadeToBlack::FadeToBlack(Module* module_off, Module* module_on, float time)
 {
 	bool ret = false;
-
-	this->room = room;
 
 	if(current_step == fade_step::none)
 	{

@@ -4,10 +4,6 @@
 #include "Module.h"
 
 #include "Enemy.h"
-#include "Enemy_WhiteGuard.h"
-#include "Enemy_Bosslvl1.h"
-#include "Enemy_CapturerGuard.h"
-#include "Enemy_Knife.h"
 
 #define MAX_ENEMIES 200
 

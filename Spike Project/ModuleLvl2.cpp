@@ -11,25 +11,11 @@
 #include "ModuleAudio.h"
 #include "ModuleParticles.h"
 #include "ModulePowerUp.h"
-#include "ModuleSecretAreas.h"
+
 
 ModuleLvl2::ModuleLvl2(){
 	//stair visible
-	stair.PushBack({ 0, 0, 16, 16 });
-	stair.loop = false;
-	stair.speed = 0.02f;
-
-	//stair not visible
-	stairinv.PushBack({ 21, 19, 6, 6 });
-	stairinv.loop = false;
-	stairinv.speed = 0.02f;
-
-	current_stair1_animation = &stairinv;
-	current_stair2_animation = &stairinv;
-	current_stair3_animation = &stairinv;
-	current_stair4_animation = &stairinv;
-	current_stair5_animation = &stairinv;
-	current_stair6_animation = &stairinv;
+	PanAnim.PushBack({11, 11, 313, 152});
 }
 
 ModuleLvl2::~ModuleLvl2(){}
@@ -40,6 +26,15 @@ bool ModuleLvl2::Start() {
 	//Textures
 	App->textures->Enable();
 	background = App->textures->Load("Resources/Spike/spike_backgrownd.png");//foto del fondo
+	
+	//Creating the Pan:
+	PanText = App->textures->Load("Resources/Spike/Pan.png");
+	Panptr = new Pan();
+	Panptr->Anim = PanAnim;
+	Panptr->position = { 0, -200 };
+	Panptr->speed = 5;
+
+
 	//items = App->textures->Load("Resources/Animations/Items.png");//foto del fondo
 	
 	//Enables & Disables
@@ -59,7 +54,7 @@ update_status ModuleLvl2::Update(){
 
 	//Render Map
 	App->render->Blit(background, 0, - SCREEN_HEIGHT, NULL);
-	
+	App->render->Blit(PanText, Panptr->position.x, Panptr->position.y, &Panptr->Anim.GetCurrentFrame(), true);
 
 	////Fade to black to next lvl
 	//if (App->input->keyboard[SDL_SCANCODE_F2]) {
@@ -82,14 +77,13 @@ bool ModuleLvl2::CleanUp(){
 	App->collision->Disable();
 	App->audio->Disable();
 	App->player->Disable();
-
+	if(Panptr!=nullptr)
+	delete Panptr;
+	Panptr = nullptr;
 	//Unload textures
 	if(background!=nullptr)
 	App->textures->Unload(background);
 	background = nullptr;
-	if(items!=nullptr)
-	App->textures->Unload(items);
-	items = nullptr;
 	return true;
 }
 

@@ -6,7 +6,6 @@
 #include "SDL/include/SDL.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
-#include "ModuleSecretAreas.h"
 #include "ModuleLvl2.h"
 #include "ModuleWelcome.h"
 

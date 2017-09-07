@@ -5,24 +5,11 @@
 #include "ModuleParticles.h"
 #include "ModuleTextures.h"
 #include "Enemy.h"
-#include "Enemy_WhiteGuard.h"
-#include "Enemy_Bosslvl1.h"
-#include "Enemy_CapturerGuard.h"
-#include "Enemy_Knife.h"
 #include "ModulePlayer.h"
-#include "Enemy_BossGrenade.h"
 #include <time.h>
 #include <stdlib.h>
 #include "ModulePowerUp.h"
-#include "Runner.h"
-#include "Enemy_Motorbike.h"
-#include "Enemy_Hole.h"
-#include "Enemy_Rocket.h"
 #include "ModuleAudio.h"
-#include "Enemy_Car.h"
-#include "Enemy_Truck.h"
-#include "PathWhiteGuard.h"
-#include "Enemy_Bunker.h"
 
 #define SPAWN_MARGIN 50
 
@@ -176,72 +163,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			{
 				switch (info.type)
 				{
-				case ENEMY_TYPES::WHITEGUARD:
-					enemies[i] = new Enemy_WhiteGuard(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::WHITEGUARD;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::WHITEGUARD;
-					break;
-				case ENEMY_TYPES::CAPTURERGUARD:
-					enemies[i] = new Enemy_CapturerGuard(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::CAPTURERGUARD;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::CAPTURERGUARD;
-					break;
-				case ENEMY_TYPES::BOSSLVL1:
-					enemies[i] = new Enemy_Bosslvl1(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::BOSSLVL1;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::BOSSLVL1;
-					break;
-				case ENEMY_TYPES::KNIFE:
-					enemies[i] = new Enemy_Knife(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::KNIFE;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::KNIFE;
-					break;
-				case ENEMY_TYPES::BOSSGRENADE:
-					enemies[i] = new Enemy_BossGrenade(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::BOSSGRENADE;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::BOSSGRENADE;
-					break;
-				case ENEMY_TYPES::RUNNER:
-					enemies[i] = new Runner(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::RUNNER;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::RUNNER;
-					break;
-				case ENEMY_TYPES::MOTORBIKE:
-					enemies[i] = new Enemy_Motorbike(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::MOTORBIKE;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::MOTORBIKE;
-					break;
-				case ENEMY_TYPES::HOLE:
-					enemies[i] = new Enemy_Hole(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::HOLE;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::HOLE;
-					break;
-				case ENEMY_TYPES::ROCKET:
-					enemies[i] = new Enemy_Rocket(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::ROCKET;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::ROCKET;
-					break;
-				case ENEMY_TYPES::CAR:
-					enemies[i] = new Enemy_Car(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::CAR;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::CAR;
-					break;
-				case ENEMY_TYPES::TRUCK:
-					enemies[i] = new Enemy_Truck(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::TRUCK;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::TRUCK;
-					break;
-				case ENEMY_TYPES::PATHWHITEGUARD:
-					enemies[i] = new Enemy_PathWhiteGuard(info.x, info.y, info.cpath);
-					enemies[i]->type = ENEMY_TYPES::PATHWHITEGUARD;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::PATHWHITEGUARD;
-					
-					break;
-				case ENEMY_TYPES::BUNKER:
-					enemies[i] = new Enemy_Bunker(info.x, info.y);
-					enemies[i]->type = ENEMY_TYPES::BUNKER;
-					enemies[i]->collider->enemytype = ENEMY_TYPES::BUNKER;
-					break;
+				
 				}
 			}
 		}

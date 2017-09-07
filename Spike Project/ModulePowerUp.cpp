@@ -7,7 +7,6 @@
 #include "ModuleAudio.h"
 #include "ModulePlayer.h"
 #include "ModuleEnemies.h"
-#include "ModuleSecretAreas.h"
 
 ModulePowerUp::ModulePowerUp()
 {
@@ -315,9 +314,7 @@ void ModulePowerUp::OnCollision(Collider* c1, Collider* c2)
 					if (powerups[i]->label == "ally2")
 						App->powerups_taken[pu_taken_lvl2::ally2] = true;
 					if (powerups[i]->label == "hg")
-						App->secretareas->hgcounter++;
 					if (powerups[i]->label == "mg")
-						App->secretareas->mgcounter++;
 					App->player->score += 1000;
 					App->enemies->AddEnemy(ENEMY_TYPES::RUNNER, powerups[i]->position.x, powerups[i]->position.y);
 					c1->to_delete = true;

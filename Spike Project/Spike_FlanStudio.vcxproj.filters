@@ -7,39 +7,6 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy_BossGrenade.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_Bosslvl1.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_Bunker.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_CapturerGuard.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_Car.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_Hole.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_Knife.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_Motorbike.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_Rocket.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_Truck.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_WhiteGuard.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
     <ClCompile Include="Globals.cpp">
       <Filter>Core</Filter>
     </ClCompile>
@@ -79,9 +46,6 @@
     <ClCompile Include="ModuleRender.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleSecretAreas.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleTextures.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -91,11 +55,8 @@
     <ClCompile Include="ModuleWindow.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="PathWhiteGuard.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Runner.cpp">
-      <Filter>Enemies</Filter>
+    <ClCompile Include="ModuleFood.cpp">
+      <Filter>Food</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,39 +68,6 @@
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_BossGrenade.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_Bosslvl1.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_Bunker.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_CapturerGuard.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_Car.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_Hole.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_Knife.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_Motorbike.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_Rocket.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_Truck.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy_WhiteGuard.h">
-      <Filter>Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Globals.h">
       <Filter>Core</Filter>
@@ -183,9 +111,6 @@
     <ClInclude Include="ModuleRender.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleSecretAreas.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
     <ClInclude Include="ModuleTextures.h">
       <Filter>Modules</Filter>
     </ClInclude>
@@ -201,11 +126,8 @@
     <ClInclude Include="Path.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="PathWhiteGuard.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Runner.h">
-      <Filter>Enemies</Filter>
+    <ClInclude Include="ModuleFood.h">
+      <Filter>Food</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +142,9 @@
     </Filter>
     <Filter Include="Modules">
       <UniqueIdentifier>{3c1543d4-a9dc-493f-886f-daa7c6876ae4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Food">
+      <UniqueIdentifier>{29f6fd06-fe5b-405f-94ba-9aa5c40415e8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

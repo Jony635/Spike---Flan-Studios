@@ -7,7 +7,6 @@
 #include "ModuleWelcome.h"
 #include "ModuleLvl2.h"
 #include "ModuleAudio.h"
-#include "ModuleSecretAreas.h"
 #include "ModulePlayer.h"
 #include "ModuleFonts.h"
 
@@ -22,14 +21,10 @@ bool ModuleWelcome::Start() {
 
 	LOG("Loading Welcome scene");
 
-	App->secretareas->hgcounter = App->secretareas->mgcounter = 0;
 	App->player->live_counter = 4;
 	App->player->granade_counter = 5;
-	App->secretareas->actual_room = ROOM1;
-	App->lvl2->checkpointpassed = false;
 	App->player->soundhighscore = true;
 	App->player->win = false;
-	App->secretareas->playdorosound = true;
 
 
 	for (int i = 0; i < StartTypes::MAX_TYPES; i++)
@@ -60,16 +55,9 @@ bool ModuleWelcome::Start() {
 	App->render->camera.x = App->render->camera.y = 0;
 	App->audio->Play("Resources/Audio/Themes_SoundTrack/Title Theme.ogg", true);
 	//init stairs
-	App->lvl2->current_stair1_animation = &App->lvl2->stairinv;
-	App->lvl2->current_stair2_animation = &App->lvl2->stairinv;
-	App->lvl2->current_stair3_animation = &App->lvl2->stairinv;
-	App->lvl2->current_stair4_animation = &App->lvl2->stairinv;
-	App->lvl2->current_stair5_animation = &App->lvl2->stairinv;
-	App->lvl2->current_stair6_animation = &App->lvl2->stairinv;
+	
 	//restart things
-	App->secretareas->gateopened = false;
-	App->secretareas->swallposition.x = 33;
-	App->secretareas->swallposition.y = 216;
+	
 	return true;
 }
 
