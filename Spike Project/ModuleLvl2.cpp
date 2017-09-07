@@ -33,7 +33,7 @@ bool ModuleLvl2::Start() {
 	Panptr->Anim = PanAnim;
 	Panptr->position = { (SCREEN_WIDTH / 2)+500, -172 };
 	Panptr->A = 200;
-	Panptr->F = 0.5;
+	Panptr->T = 2;
 
 	//items = App->textures->Load("Resources/Animations/Items.png");//foto del fondo
 	
@@ -55,9 +55,7 @@ update_status ModuleLvl2::Update(){
 	//Render Map
 	Panptr->Timer += 0.01;
 
-	Panptr->position.x = 125+ Panptr->A * cos(((2*PI)/5)-2 * PI* Panptr->Timer);
-
-
+	Panptr->position.x = 125+Panptr->A* cos((2 * PI)/5 - (2*PI*Panptr->Timer)/Panptr->T);
 
 	App->render->Blit(background, 0, - SCREEN_HEIGHT, NULL);
 	App->render->Blit(PanText, Panptr->position.x, Panptr->position.y, &Panptr->Anim.GetCurrentFrame(), true);
