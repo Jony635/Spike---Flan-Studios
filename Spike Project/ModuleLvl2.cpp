@@ -31,7 +31,7 @@ bool ModuleLvl2::Start() {
 	PanText = App->textures->Load("Resources/Spike/Pan.png");
 	Panptr = new Pan();
 	Panptr->Anim = PanAnim;
-	Panptr->position = { 0, -200 };
+	Panptr->position = { 5, -172 };
 	Panptr->speed = 5;
 
 
