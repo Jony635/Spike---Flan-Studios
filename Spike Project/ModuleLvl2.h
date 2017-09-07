@@ -20,6 +20,9 @@ public:
 	uint speed = 0;
 	Animation Anim;
 	iPoint position;
+	float velo = 0;
+	int amplitud = 0;
+	float timer = 0;
 
 	Pan() {}
 	~Pan() {}

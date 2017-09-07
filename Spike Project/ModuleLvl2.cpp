@@ -31,9 +31,8 @@ bool ModuleLvl2::Start() {
 	PanText = App->textures->Load("Resources/Spike/Pan.png");
 	Panptr = new Pan();
 	Panptr->Anim = PanAnim;
-	Panptr->position = { 5, -172 };
-	Panptr->speed = 5;
-
+	Panptr->position = { (SCREEN_WIDTH / 2)-100, -172 };
+	Panptr->amplitud = 200;
 
 	//items = App->textures->Load("Resources/Animations/Items.png");//foto del fondo
 	
@@ -53,8 +52,13 @@ bool ModuleLvl2::Start() {
 update_status ModuleLvl2::Update(){
 
 	//Render Map
+	Panptr->timer += 0.01;
+	if (Panptr->timer < 8) {
+		Panptr->velo += Panptr->timer*0.01;
+	}
+	
 	App->render->Blit(background, 0, - SCREEN_HEIGHT, NULL);
-	App->render->Blit(PanText, Panptr->position.x, Panptr->position.y, &Panptr->Anim.GetCurrentFrame(), true);
+	App->render->Blit(PanText, ((Panptr->amplitud)*sin(Panptr->velo))+Panptr->position.x, Panptr->position.y, &Panptr->Anim.GetCurrentFrame(), true);
 
 	////Fade to black to next lvl
 	//if (App->input->keyboard[SDL_SCANCODE_F2]) {
