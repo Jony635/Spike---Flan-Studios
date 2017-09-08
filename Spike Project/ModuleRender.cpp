@@ -6,7 +6,7 @@
 #include "SDL/include/SDL.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
-#include "ModuleLvl2.h"
+#include "InGameScene.h"
 #include "ModuleWelcome.h"
 
 ModuleRender::ModuleRender() : Module()

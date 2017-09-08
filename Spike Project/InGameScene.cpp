@@ -4,7 +4,7 @@
 #include "ModuleRender.h"
 #include "ModuleInput.h"
 #include "ModuleFadeToBlack.h"
-#include "ModuleLvl2.h"
+#include "InGameScene.h"
 #include "ModulePlayer.h"
 #include "ModuleCollision.h"
 #include "ModuleEnemies.h"
@@ -13,14 +13,14 @@
 #include "ModulePowerUp.h"
 
 
-ModuleLvl2::ModuleLvl2(){
+InGameScene::InGameScene(){
 	//stair visible
 	PanAnim.PushBack({11, 11, 313, 152});
 }
 
-ModuleLvl2::~ModuleLvl2(){}
+InGameScene::~InGameScene(){}
 
-bool ModuleLvl2::Start() {
+bool InGameScene::Start() {
 
 	LOG("Loading main scene");
 	//Textures
@@ -50,7 +50,7 @@ bool ModuleLvl2::Start() {
 	return true;
 }
 
-update_status ModuleLvl2::Update(){
+update_status InGameScene::Update(){
 
 	//Render Map
 	Panptr->Timer += 0.01;
@@ -69,7 +69,7 @@ update_status ModuleLvl2::Update(){
 
 }
 
-bool ModuleLvl2::CleanUp(){
+bool InGameScene::CleanUp(){
 
 	LOG("Unloading lvl2 scene");
 

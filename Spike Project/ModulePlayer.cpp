@@ -9,7 +9,7 @@
 #include "ModuleFonts.h"
 #include "ModulePlayer.h"
 #include "ModuleAudio.h"
-#include "ModuleLvl2.h"
+#include "InGameScene.h"
 #include "ModuleEnemies.h"
 #include "ModuleWelcome.h"
 #include "ModulePowerUp.h"

@@ -17,7 +17,7 @@ class ModuleEnemies;
 class ModuleFonts;
 class Module;
 class ModuleWelcome;
-class ModuleLvl2;
+class InGameScene;
 class ModuleAudio;
 class ModulePowerUp;
 class ModuleSecretAreas;
@@ -53,7 +53,7 @@ public:
 	ModuleInput* input;
 	ModuleTextures* textures;
 	ModuleWelcome* welcome;
-	ModuleLvl2* lvl2;
+	InGameScene* mainscene;
 	ModuleSecretAreas* secretareas;
 	ModuleCollision* collision;
 	ModulePlayer* player;

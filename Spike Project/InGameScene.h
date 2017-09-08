@@ -1,5 +1,5 @@
-#ifndef __MODULELVL2_H__
-#define __MODULELVL2_H__
+#ifndef INGAMESCENE
+#define INGAMESCENE
 
 #include "Module.h"
 #include "Animation.h"
@@ -27,11 +27,11 @@ public:
 	Pan() {}
 	~Pan() {}
 };
-class ModuleLvl2 : public Module
+class InGameScene : public Module
 {
 public:
-	ModuleLvl2();
-	~ModuleLvl2();
+	InGameScene();
+	~InGameScene();
 	bool Start();
 	update_status Update();
 	bool CleanUp();

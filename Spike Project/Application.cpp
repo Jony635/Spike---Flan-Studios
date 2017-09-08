@@ -3,7 +3,7 @@
 #include "ModuleRender.h"
 #include "ModuleInput.h"
 #include "ModuleTextures.h"
-#include "ModuleLvl2.h"
+#include "InGameScene.h"
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
 #include "ModuleFadeToBlack.h"
@@ -26,7 +26,7 @@ Application::Application()
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = fonts = new ModuleFonts();
 	modules[i++] = welcome = new ModuleWelcome();
-	modules[i++] = lvl2 = new ModuleLvl2();
+	modules[i++] = mainscene = new InGameScene();
 	modules[i++] = enemies = new ModuleEnemies();
 	modules[i++] = player = new ModulePlayer();
 	modules[i++] = powerup = new ModulePowerUp();

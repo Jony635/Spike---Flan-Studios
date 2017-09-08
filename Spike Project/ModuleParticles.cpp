@@ -8,7 +8,7 @@
 #include "ModuleAudio.h"
 #include "SDL/include/SDL_timer.h"
 #include "ModulePlayer.h"
-#include "ModuleLvl2.h"
+#include "InGameScene.h"
 
 ModuleParticles::ModuleParticles()
 {

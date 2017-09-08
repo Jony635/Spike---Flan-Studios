@@ -87,7 +87,7 @@
     <ClInclude Include="ModuleFonts.h" />
     <ClInclude Include="ModuleFood.h" />
     <ClInclude Include="ModuleInput.h" />
-    <ClInclude Include="ModuleLvl2.h" />
+    <ClInclude Include="InGameScene.h" />
     <ClInclude Include="ModuleParticles.h" />
     <ClInclude Include="ModulePlayer.h" />
     <ClInclude Include="ModulePowerUp.h" />
@@ -110,7 +110,7 @@
     <ClCompile Include="ModuleFonts.cpp" />
     <ClCompile Include="ModuleFood.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
-    <ClCompile Include="ModuleLvl2.cpp" />
+    <ClCompile Include="InGameScene.cpp" />
     <ClCompile Include="ModuleParticles.cpp" />
     <ClCompile Include="ModulePlayer.cpp" />
     <ClCompile Include="ModulePowerUp.cpp" />
