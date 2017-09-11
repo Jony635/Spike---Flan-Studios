@@ -53,7 +53,8 @@ update_status MenuScene::Update() {
 	if (!App->fade->IsFading())
 	{
 		if (App->input->keyboard[SDL_SCANCODE_S] == KEY_DOWN ||
-			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_DOWN] == KEY_DOWN)
+			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_DOWN] == KEY_DOWN ||
+			App->input->axis[SDL_CONTROLLER_AXIS_LEFTY]==AXIS_Y_DOWN_DOWN)
 		{
 			if (Indicator == 2)
 			{
@@ -62,7 +63,8 @@ update_status MenuScene::Update() {
 			else Indicator++;
 		}
 		if (App->input->keyboard[SDL_SCANCODE_W] == KEY_DOWN ||
-			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_UP] == KEY_DOWN)
+			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_UP] == KEY_DOWN ||
+			App->input->axis[SDL_CONTROLLER_AXIS_LEFTY] == AXIS_Y_UP_DOWN)
 		{
 			if (Indicator == 0)
 			{
@@ -91,7 +93,8 @@ update_status MenuScene::Update() {
 	App->fonts->BlitText(112, 8, font_high_score, high_text);*/
 
 	//Fade to black to next lvl
-	if (App->input->keyboard[SDL_SCANCODE_RETURN] == KEY_STATE::KEY_DOWN)
+	if (App->input->keyboard[SDL_SCANCODE_RETURN] == KEY_STATE::KEY_DOWN ||
+		App->input->buttons[SDL_CONTROLLER_BUTTON_A] == KEY_STATE::KEY_DOWN)
 	{
 		if (Indicator == 0)
 		{

@@ -54,8 +54,10 @@ update_status How_to_Play_Scene::Update() {
 	{
 		if (App->input->keyboard[SDL_SCANCODE_S] == KEY_DOWN ||
 			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_DOWN] == KEY_DOWN ||
+			(App->input->axis[SDL_CONTROLLER_AXIS_LEFTY]==AXIS_Y_DOWN_DOWN && App->input->axis[SDL_CONTROLLER_AXIS_LEFTX] == AXIS_IDLE)||
 			App->input->keyboard[SDL_SCANCODE_D]==KEY_DOWN ||
-			App->input->button[SDL_CONTROLLER_BUTTON_DPAD_RIGHT])
+			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_RIGHT]==KEY_DOWN ||
+			(App->input->axis[SDL_CONTROLLER_AXIS_LEFTX] == AXIS_X_RIGHT_DOWN && App->input->axis[SDL_CONTROLLER_AXIS_LEFTY] == AXIS_IDLE))
 		{
 			if (Indicator == 0) Indicator = 1;
 			else Indicator = 0;
@@ -63,8 +65,10 @@ update_status How_to_Play_Scene::Update() {
 		}
 		if (App->input->keyboard[SDL_SCANCODE_W] == KEY_DOWN ||
 			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_UP] == KEY_DOWN ||
+			(App->input->axis[SDL_CONTROLLER_AXIS_LEFTY]==AXIS_Y_UP_DOWN && App->input->axis[SDL_CONTROLLER_AXIS_LEFTX] == AXIS_IDLE) ||
 			App->input->keyboard[SDL_SCANCODE_A] == KEY_DOWN ||
-			App->input->button[SDL_CONTROLLER_BUTTON_DPAD_LEFT])
+			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_LEFT]==KEY_DOWN ||
+			(App->input->axis[SDL_CONTROLLER_AXIS_LEFTX]==AXIS_X_LEFT_DOWN && App->input->axis[SDL_CONTROLLER_AXIS_LEFTY] == AXIS_IDLE))
 		{
 			if (Indicator == 0) Indicator = 1;
 			else Indicator = 0;
@@ -90,7 +94,8 @@ update_status How_to_Play_Scene::Update() {
 	App->fonts->BlitText(112, 8, font_high_score, high_text);*/
 
 	//Fade to black to next lvl
-	if (App->input->keyboard[SDL_SCANCODE_RETURN] == KEY_STATE::KEY_DOWN)
+	if (App->input->keyboard[SDL_SCANCODE_RETURN] == KEY_STATE::KEY_DOWN ||
+		App->input->buttons[SDL_CONTROLLER_BUTTON_A]==KEY_STATE::KEY_DOWN)
 	{
 		if (Indicator == 0)
 		{

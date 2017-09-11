@@ -40,14 +40,14 @@
     <ClCompile Include="ModuleFood.cpp">
       <Filter>Food</Filter>
     </ClCompile>
+    <ClCompile Include="How_to_Play_Scene.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
     <ClCompile Include="InGameScene.cpp">
-      <Filter>Modules</Filter>
+      <Filter>Screens</Filter>
     </ClCompile>
     <ClCompile Include="MenuScene.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="How_to_Play_Scene.cpp">
-      <Filter>Modules</Filter>
+      <Filter>Screens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,13 +103,13 @@
       <Filter>Food</Filter>
     </ClInclude>
     <ClInclude Include="InGameScene.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuScene.h">
-      <Filter>Modules</Filter>
+      <Filter>Screens</Filter>
     </ClInclude>
     <ClInclude Include="How_to_Play_Scene.h">
-      <Filter>Modules</Filter>
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>Screens</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
