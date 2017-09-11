@@ -1,6 +1,8 @@
 #include "ModuleFood.h"
 #include "Application.h"
 #include "ModuleCollision.h"
+#include "ModuleRender.h"
+#include "InGameScene.h"
 
 ModuleFood::ModuleFood()
 {
@@ -28,17 +30,47 @@ update_status ModuleFood::Update()
 {
 
 
-
-
-
+	
+	RelocateFruitsOnPan();
+	BlitFood();
 	return update_status::UPDATE_CONTINUE;
+}
+
+void ModuleFood::RelocateFruitsOnPan()
+{
+	for (int i = 0; i < 50; ++i)
+	{
+		if (FOOD[i].State == FoodState::ON_PAN)
+		{
+			FOOD[i].position.x = App->mainscene->Panptr->position.x + 10;
+			break;
+		}
+		
+	}
+}
+
+void ModuleFood::BlitFood()
+{
+	for (int i = 0; i < 50; ++i)
+	{
+		if (FOOD[i].Type != FoodTypes::NO_TYPE)
+		{
+			App->render->Blit(FoodTexts, FOOD[i].position.x, FOOD[i].position.y, &FOOD[i].Anim.frames[0], true);
+		}
+	}
 }
 
 bool ModuleFood::CleanUp()
 {
+	if (FoodTexts != nullptr)
+	{
+		App->textures->Unload(FoodTexts);
+		FoodTexts = nullptr;
+	}
 	ClearFood();
 	return true;
 }
+
 void ModuleFood::ClearFood()
 {
 	for (int i = 0; i < 50; ++i)
@@ -47,12 +79,13 @@ void ModuleFood::ClearFood()
 	}
 }
 
-void ModuleFood::AddFood(FoodTypes FoodType, uint speed)
+void ModuleFood::AddFood(FoodTypes FoodType, uint speed, iPoint position)
 {
 	for (int i = 0; i < 50; ++i)
 	{
 		if (FOOD[i].Type == FoodTypes::NO_TYPE)
 		{
+			FOOD[i].position = position;
 			FOOD[i].Type = FoodType;
 			FOOD[i].speed = speed;
 			FOOD[i].State = FoodState::ON_PAN;

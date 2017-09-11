@@ -5,12 +5,9 @@
 #include "Animation.h"
 #include "Globals.h"
 #include "p2Point.h"
+#include "ModuleFood.h"
 
-#define NUM_COLLIDERSWALL 100
-#define NUM_COLLIDERSWATER 100
-#define MAX_COLLIDER_DOWNSTAIRS 20
-#define NUM_COLLIDERSANTIBULLET 4
-#define NUM_COLLIDERSANTIENEMY 2
+
 
 struct SDL_Texture;
 
@@ -24,9 +21,26 @@ public:
 	int A = 0;
 	float Timer = 0.0f;
 
+	bool IsPanEmpty();
+
 	Pan() {}
 	~Pan() {}
 };
+
+bool Pan::IsPanEmpty()
+{
+	bool result = true;
+	for (int i = 0; i < 50; ++i)
+	{
+		if (App->food->FOOD[i].State == FoodState::ON_PAN)
+		{
+			result = false;
+			break;
+		}
+	}
+	return result;
+}
+
 class InGameScene : public Module
 {
 public:

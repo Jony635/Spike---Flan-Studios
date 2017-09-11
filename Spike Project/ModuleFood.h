@@ -5,6 +5,7 @@
 #include "Animation.h"
 #include "Module.h"
 #include "ModuleTextures.h"
+#include "p2Point.h"
 
 enum FoodTypes 
 {
@@ -33,6 +34,7 @@ class Food {
 public:
 	FoodTypes Type = FoodTypes::NO_TYPE;
 	uint speed = 0;
+	iPoint position = { 0,0 };
 	Animation Anim;
 	FoodState State = FoodState::NO_STATE;
 	Collider* col = nullptr;
@@ -50,11 +52,13 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
-	void AddFood(FoodTypes FoodType, uint speed);
+	void AddFood(FoodTypes FoodType, uint speed, iPoint position);
 	void OnCollision(Collider* c1, Collider* c2);
 
 	Food FOOD[50]; //En el Start se inicializa
 	void ClearFood();
+	void BlitFood();
+	void RelocateFruitsOnPan();
 
 	SDL_Texture* FoodTexts = nullptr;
 
