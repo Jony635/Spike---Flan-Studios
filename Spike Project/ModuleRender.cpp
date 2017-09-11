@@ -5,7 +5,6 @@
 #include "ModuleInput.h"
 #include "SDL/include/SDL.h"
 #include "ModulePlayer.h"
-#include "ModuleParticles.h"
 #include "InGameScene.h"
 #include "ModuleWelcome.h"
 

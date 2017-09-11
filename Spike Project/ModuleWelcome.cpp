@@ -27,14 +27,14 @@ bool ModuleWelcome::Start() {
 	App->player->win = false;
 
 
-	for (int i = 0; i < StartTypes::MAX_TYPES; i++)
+	/*for (int i = 0; i < StartTypes::MAX_TYPES; i++)
 	{
 		App->start_types_arr[i] = false;
 	}
 	for (int i = 0; i < pu_taken_lvl2::MAXIM_TYPES; i++)
 	{
 		App->powerups_taken[i] = false;
-	}
+	}*/
 
 
 	//fonts

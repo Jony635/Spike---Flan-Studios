@@ -2,7 +2,6 @@
 #include "ModuleInput.h"
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
-#include "ModulePowerUp.h"
 
 ModuleCollision::ModuleCollision()
 {

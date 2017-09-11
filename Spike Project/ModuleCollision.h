@@ -4,7 +4,6 @@
 #define MAX_COLLIDERS 500
 
 #include "Module.h"
-#include "Enemy.h"
 
 enum COLLIDER_TYPE
 {

@@ -3,7 +3,7 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 15
+#define NUM_MODULES 12
 
 class ModuleWindow;
 class ModuleInput;
@@ -49,7 +49,7 @@ public:
 
 	Application();
 	~Application();
-
+	bool stop_music = false;
 	bool Init();
 	update_status Update();
 	bool CleanUp();

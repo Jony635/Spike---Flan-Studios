@@ -7,10 +7,7 @@
 #include "InGameScene.h"
 #include "ModulePlayer.h"
 #include "ModuleCollision.h"
-#include "ModuleEnemies.h"
 #include "ModuleAudio.h"
-#include "ModuleParticles.h"
-#include "ModulePowerUp.h"
 
 
 InGameScene::InGameScene(){
@@ -74,9 +71,6 @@ bool InGameScene::CleanUp(){
 	LOG("Unloading lvl2 scene");
 
 	//Disables
-	App->particles->Disable();
-	App->powerup->Disable();
-	App->enemies->Disable();
 	App->textures->Disable();
 	App->collision->Disable();
 	App->audio->Disable();

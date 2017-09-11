@@ -7,12 +7,9 @@
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
 #include "ModuleFadeToBlack.h"
-#include "ModuleParticles.h"
-#include "ModuleEnemies.h"
 #include "ModuleFonts.h"
 #include "ModuleAudio.h"
 #include "ModuleWelcome.h"
-#include "ModulePowerUp.h"
 #include "Globals.h"
 #include "ModuleFood.h"
 
@@ -29,10 +26,7 @@ Application::Application()
 	modules[i++] = food = new ModuleFood();
 	modules[i++] = welcome = new ModuleWelcome();
 	modules[i++] = mainscene = new InGameScene();
-	modules[i++] = enemies = new ModuleEnemies();
 	modules[i++] = player = new ModulePlayer();
-	modules[i++] = powerup = new ModulePowerUp();
-	modules[i++] = particles = new ModuleParticles();
 	modules[i++] = collision = new ModuleCollision();
 	modules[i++] = fade = new ModuleFadeToBlack();
 	modules[i++] = audio = new ModuleAudio();
@@ -53,10 +47,7 @@ bool Application::Init()
 
 	// Deactivate modules here ----
 	welcome->Disable();
-	enemies->Disable();
 	collision->Disable();
-	powerup->Disable();
-	particles->Disable();
 	player->Disable();
 	// ----------------------------
 

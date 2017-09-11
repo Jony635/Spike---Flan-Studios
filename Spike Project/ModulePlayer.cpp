@@ -2,7 +2,6 @@
 #include "Application.h"
 #include "ModuleTextures.h"
 #include "ModuleInput.h"
-#include "ModuleParticles.h"
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
@@ -10,9 +9,7 @@
 #include "ModulePlayer.h"
 #include "ModuleAudio.h"
 #include "InGameScene.h"
-#include "ModuleEnemies.h"
 #include "ModuleWelcome.h"
-#include "ModulePowerUp.h"
 
 #include<stdio.h>
 
