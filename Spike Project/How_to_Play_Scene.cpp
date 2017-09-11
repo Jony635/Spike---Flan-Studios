@@ -53,14 +53,18 @@ update_status How_to_Play_Scene::Update() {
 	if (!App->fade->IsFading())
 	{
 		if (App->input->keyboard[SDL_SCANCODE_S] == KEY_DOWN ||
-			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_DOWN] == KEY_DOWN)
+			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_DOWN] == KEY_DOWN ||
+			App->input->keyboard[SDL_SCANCODE_D]==KEY_DOWN ||
+			App->input->button[SDL_CONTROLLER_BUTTON_DPAD_RIGHT])
 		{
 			if (Indicator == 0) Indicator = 1;
 			else Indicator = 0;
 			
 		}
 		if (App->input->keyboard[SDL_SCANCODE_W] == KEY_DOWN ||
-			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_UP] == KEY_DOWN)
+			App->input->buttons[SDL_CONTROLLER_BUTTON_DPAD_UP] == KEY_DOWN ||
+			App->input->keyboard[SDL_SCANCODE_A] == KEY_DOWN ||
+			App->input->button[SDL_CONTROLLER_BUTTON_DPAD_LEFT])
 		{
 			if (Indicator == 0) Indicator = 1;
 			else Indicator = 0;
