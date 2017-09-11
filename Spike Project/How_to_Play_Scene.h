@@ -1,5 +1,5 @@
-#ifndef __MODULEWELCOME_H__
-#define __MODULEWELCOME__
+#ifndef __HOW_TO_PLAY_H__
+#define __HOW_TO_PLAY_H__
 
 #include "Module.h"
 #include "Animation.h"
@@ -10,11 +10,11 @@
 
 struct SDL_Texture;
 
-class ModuleWelcome : public Module
+class How_to_Play_Scene : public Module
 {
 public:
-	ModuleWelcome();
-	~ModuleWelcome();
+	How_to_Play_Scene();
+	~How_to_Play_Scene();
 
 	bool Start();
 	update_status Update();
@@ -23,12 +23,15 @@ public:
 public:
 
 	enum MENU {
-		Lvl2,
-		exit
+		PLAY,
+		HOW_TO_PLAY,
+		EXIT
 	}Menu_Options;
 
-	SDL_Texture* Area2Option = nullptr;
-	SDL_Texture* ExitOption = nullptr;
+	uint Indicator = 0;
+
+	SDL_Texture* HowtoTexture = nullptr;
+	iPoint ballPos = { 0,0 };
 
 	char one_up_text[3];
 	char high_text[4];
@@ -41,4 +44,4 @@ public:
 
 };
 
-#endif // __MODULELVL2_H__
+#endif

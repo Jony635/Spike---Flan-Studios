@@ -9,7 +9,7 @@
 #include "ModulePlayer.h"
 #include "ModuleAudio.h"
 #include "InGameScene.h"
-#include "ModuleWelcome.h"
+#include "MenuScene.h"
 
 #include<stdio.h>
 

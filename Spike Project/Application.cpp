@@ -9,9 +9,10 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleFonts.h"
 #include "ModuleAudio.h"
-#include "ModuleWelcome.h"
+#include "MenuScene.h"
 #include "Globals.h"
 #include "ModuleFood.h"
+#include "How_to_Play_Scene.h"
 
 
 
@@ -24,7 +25,8 @@ Application::Application()
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = fonts = new ModuleFonts();
 	modules[i++] = food = new ModuleFood();
-	modules[i++] = welcome = new ModuleWelcome();
+	modules[i++] = menu = new MenuScene();
+	modules[i++] = howtoscene = new How_to_Play_Scene();
 	modules[i++] = mainscene = new InGameScene();
 	modules[i++] = player = new ModulePlayer();
 	modules[i++] = collision = new ModuleCollision();
@@ -46,7 +48,8 @@ bool Application::Init()
 	bool ret = true;
 
 	// Deactivate modules here ----
-	welcome->Disable();
+	mainscene->Disable();
+	howtoscene->Disable();
 	collision->Disable();
 	player->Disable();
 	// ----------------------------

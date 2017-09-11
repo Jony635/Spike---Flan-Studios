@@ -6,7 +6,7 @@
 #include "SDL/include/SDL.h"
 #include "ModulePlayer.h"
 #include "InGameScene.h"
-#include "ModuleWelcome.h"
+#include "MenuScene.h"
 
 ModuleRender::ModuleRender() : Module()
 {
