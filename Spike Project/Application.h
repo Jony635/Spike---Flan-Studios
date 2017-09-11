@@ -3,7 +3,7 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 14
+#define NUM_MODULES 15
 
 class ModuleWindow;
 class ModuleInput;
@@ -18,30 +18,10 @@ class ModuleFonts;
 class Module;
 class ModuleWelcome;
 class InGameScene;
+class ModuleFood;
 class ModuleAudio;
 class ModulePowerUp;
-class ModuleSecretAreas;
 
-enum StartTypes {
-	lvl2,
-	room1,
-	room2,
-	room4,
-	room5,
-	MAX_TYPES
-};
-
-enum pu_taken_lvl2 {
-	granade1,
-	binocular,
-	godmode,
-	granade2,
-	granade3,
-	granade4,
-	ally1,
-	ally2,
-	MAXIM_TYPES
-};
 
 class Application
 {
@@ -54,8 +34,8 @@ public:
 	ModuleTextures* textures;
 	ModuleWelcome* welcome;
 	InGameScene* mainscene;
-	ModuleSecretAreas* secretareas;
 	ModuleCollision* collision;
+	ModuleFood* food;
 	ModulePlayer* player;
 	ModuleFadeToBlack* fade;
 	ModuleParticles* particles;
@@ -63,9 +43,7 @@ public:
 	ModuleFonts* fonts;
 	ModuleAudio* audio;
 	ModulePowerUp* powerup;
-	bool stop_music;
-	bool start_types_arr[StartTypes::MAX_TYPES] = { false,false, false, false, false };
-	bool powerups_taken[pu_taken_lvl2::MAXIM_TYPES] = { false,false, false, false, false, false, false };
+	
 
 public:
 

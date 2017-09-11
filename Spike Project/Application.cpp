@@ -14,6 +14,7 @@
 #include "ModuleWelcome.h"
 #include "ModulePowerUp.h"
 #include "Globals.h"
+#include "ModuleFood.h"
 
 
 
@@ -25,6 +26,7 @@ Application::Application()
 	modules[i++] = input = new ModuleInput();
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = fonts = new ModuleFonts();
+	modules[i++] = food = new ModuleFood();
 	modules[i++] = welcome = new ModuleWelcome();
 	modules[i++] = mainscene = new InGameScene();
 	modules[i++] = enemies = new ModuleEnemies();

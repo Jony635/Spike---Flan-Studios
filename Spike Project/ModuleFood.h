@@ -35,6 +35,7 @@ public:
 	uint speed = 0;
 	Animation Anim;
 	FoodState State = FoodState::NO_STATE;
+	Collider* col = nullptr;
 	
 	Food(){}
 	Food(FoodTypes type, uint speed) : Type(type), speed(speed) {}
@@ -49,8 +50,9 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
-
 	void AddFood(FoodTypes FoodType, uint speed);
+	void OnCollision(Collider* c1, Collider* c2);
+
 	Food FOOD[50]; //En el Start se inicializa
 	void ClearFood();
 
