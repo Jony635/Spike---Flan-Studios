@@ -4,9 +4,12 @@
 #include "ModuleRender.h"
 #include "InGameScene.h"
 #include "ModuleInput.h"
+#include <time.h>
+#include <stdlib.h>
 
 ModuleFood::ModuleFood()
 {
+	srand(time(NULL));
 	Chicken.PushBack({19, 23, 54, 38});
 	Nacho.PushBack({109,24,42,36});
 	Candy.PushBack({190,24,40,37});
@@ -35,10 +38,52 @@ update_status ModuleFood::Update()
 		ThrowUpFood();
 	}
 
+	SpawnFood();
 	MoveFoodOnAir();
 	RelocateFruitsOnPan();
 	BlitFood();
 	return update_status::UPDATE_CONTINUE;
+}
+
+void ModuleFood::SpawnFood()
+{
+	if (App->mainscene->Panptr!=nullptr && App->mainscene->Panptr->IsPanEmpty())
+	{
+		App->mainscene->Panptr->FoodSpawnTimer += 0.01f;
+		if (App->mainscene->Panptr->FoodSpawnTimer > 2.0f)
+		{
+			App->mainscene->Panptr->FoodSpawnTimer = 0.0f;
+			int op = rand() % 8;
+			switch (op)
+			{
+			case 0:
+				AddFood(FoodTypes::PINEAPPLE, 3, 0);
+				break;
+			case 1:
+				AddFood(FoodTypes::ONION, 3, 0);
+				break;
+			case 2:
+				AddFood(FoodTypes::POOL_BALL, 3, 0);
+				break;
+			case 3:
+				AddFood(FoodTypes::SAUSAGE, 3, 0);
+				break;
+			case 4:
+				AddFood(FoodTypes::CHICKEN, 3, 0);
+				break;
+			case 5:
+				AddFood(FoodTypes::COOKIE, 3, 0);
+				break;
+			case 6:
+				AddFood(FoodTypes::NACHO, 3, 0);
+				break;
+			case 7:
+				AddFood(FoodTypes::CANDY, 3, 0);
+				break;
+			}
+		}
+
+	}
 }
 
 void ModuleFood::MoveFoodOnAir()
@@ -102,7 +147,7 @@ bool ModuleFood::CleanUp()
 
 void ModuleFood::ClearFood()
 {
-	for (int i = 0; i < 50; ++i)
+	for (int i = 0; i < MAXFOOD; ++i)
 	{
 		FOOD[i].Type = FoodTypes::NO_TYPE;
 	}
@@ -110,7 +155,7 @@ void ModuleFood::ClearFood()
 
 void ModuleFood::AddFood(FoodTypes FoodType, uint speed, int x)
 {
-	for (int i = 0; i < 50; ++i)
+	for (int i = 0; i < MAXFOOD; ++i)
 	{
 		if (FOOD[i].Type == FoodTypes::NO_TYPE)
 		{
@@ -154,12 +199,12 @@ void ModuleFood::AddFood(FoodTypes FoodType, uint speed, int x)
 				FOOD[i].Anim = Pool_Ball;
 				break;
 			}
+			break;
 		}
-		else if (i = 49)
+		else if (i == 49)
 		{
 			LOG("Not enough space in Food Array");
 		}
-		break;
 	}
 }
 

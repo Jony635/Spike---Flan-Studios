@@ -11,7 +11,7 @@
 
 enum FoodTypes 
 {
-	NO_TYPE,
+	NO_TYPE=-1,
 	PINEAPPLE,
 	ONION,
 	POOL_BALL,
@@ -62,6 +62,7 @@ public:
 	void RelocateFruitsOnPan();
 	void MoveFoodOnAir();
 	void ThrowUpFood();
+	void SpawnFood();
 
 	SDL_Texture* FoodTexts = nullptr;
 

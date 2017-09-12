@@ -20,6 +20,7 @@ public:
 	float T = 0.0f;
 	int A = 0;
 	float Timer = 0.0f;
+	float FoodSpawnTimer = 0.0f;
 
 	bool IsPanEmpty();
 
@@ -30,7 +31,7 @@ public:
 bool Pan::IsPanEmpty()
 {
 	bool result = true;
-	for (int i = 0; i < 50; ++i)
+	for (int i = 0; i < MAXFOOD; ++i)
 	{
 		if (App->food->FOOD[i].State == FoodState::ON_PAN)
 		{
