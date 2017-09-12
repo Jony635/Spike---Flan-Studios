@@ -30,10 +30,22 @@ update_status ModuleFood::Update()
 {
 
 
-	
+	MoveFoodOnAir();
 	RelocateFruitsOnPan();
 	BlitFood();
 	return update_status::UPDATE_CONTINUE;
+}
+
+void ModuleFood::MoveFoodOnAir()
+{
+	for (int i = 0; i < MAXFOOD; ++i)
+	{
+		if (FOOD[i].Type != FoodTypes::NO_TYPE &&
+			FOOD[i].State == FoodState::ON_AIR)
+		{
+			FOOD[i].position.y -= FOOD[i].speed;
+		}
+	}
 }
 
 void ModuleFood::RelocateFruitsOnPan()

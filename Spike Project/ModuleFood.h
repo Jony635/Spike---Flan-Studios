@@ -1,6 +1,8 @@
 #ifndef MODULEFOOD
 #define MODULEFOOD
 
+#define MAXFOOD 50
+
 #include "Globals.h"
 #include "Animation.h"
 #include "Module.h"
@@ -54,10 +56,11 @@ public:
 	void AddFood(FoodTypes FoodType, uint speed, int x);
 	void OnCollision(Collider* c1, Collider* c2);
 
-	Food FOOD[50]; //En el Start se inicializa
+	Food FOOD[MAXFOOD]; //En el Start se inicializa
 	void ClearFood();
 	void BlitFood();
 	void RelocateFruitsOnPan();
+	void MoveFoodOnAir();
 
 	SDL_Texture* FoodTexts = nullptr;
 
