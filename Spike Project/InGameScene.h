@@ -20,6 +20,7 @@ public:
 	float T = 0.0f;
 	int A = 0;
 	float Timer = 0.0f;
+	float w = 0.0f;
 	float FoodSpawnTimer = 0.0f;
 
 	bool IsPanEmpty();

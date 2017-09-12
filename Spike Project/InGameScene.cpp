@@ -9,6 +9,7 @@
 #include "ModuleCollision.h"
 #include "ModuleAudio.h"
 #include "ModuleFadeToBlack.h"
+#include <math.h>
 
 
 InGameScene::InGameScene(){
@@ -60,9 +61,9 @@ bool InGameScene::Start() {
 update_status InGameScene::Update(){
 
 	//Render Map
-	Panptr->Timer += 0.01;
-
-	Panptr->position.x = 125+Panptr->A* cos((2 * PI)/5 - (2*PI*Panptr->Timer)/Panptr->T);
+	Panptr->Timer += 0.01f;
+	Panptr->w += 0.01;/* log(Panptr->Timer);*/
+	Panptr->position.x = 125+(Panptr->A*cos(Panptr->w*Panptr->Timer));
 
 	App->render->Blit(background, 0, - SCREEN_HEIGHT, NULL);
 	App->render->Blit(PanText, Panptr->position.x, Panptr->position.y, &Panptr->Anim.GetCurrentFrame(), true);
