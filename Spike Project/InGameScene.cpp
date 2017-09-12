@@ -61,17 +61,22 @@ bool InGameScene::Start() {
 update_status InGameScene::Update(){
 
 	//Render Map
-	Panptr->Timer += 0.01f;
-	if (Panptr->Timer >= 3)
-	{
-		Panptr->w = 4;
-	}
-	else
-	{
-		Panptr->w = 10;/* log(Panptr->Timer);*/
 
-	}
-	Panptr->position.x =130+(Panptr->A*sin(Panptr->w*Panptr->Timer));
+	Panptr->Timer += 0.01f;
+	Panptr->w = (log(Panptr->Timer));
+	Panptr->position.x = 150 + (Panptr->A*sin(Panptr->w*Panptr->Timer));
+
+	//Panptr->Timer += 0.01f;
+	//if (Panptr->Timer >= 3)
+	//{
+	//	Panptr->w = 4;
+	//}
+	//else
+	//{
+	//	Panptr->w = 10;/* log(Panptr->Timer);*/
+
+	//}
+	//Panptr->position.x =130+(Panptr->A*sin(Panptr->w*Panptr->Timer));
 
 	App->render->Blit(background, 0, - SCREEN_HEIGHT, NULL);
 	App->render->Blit(PanText, Panptr->position.x, Panptr->position.y, &Panptr->Anim.GetCurrentFrame(), true);
