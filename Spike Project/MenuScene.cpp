@@ -26,7 +26,7 @@ bool MenuScene::Start() {
 	//Enables and Disables
 	App->textures->Enable();
 	App->audio->Enable();
-	
+	App->food->Enable();
 	//fonts
 	font_high_score = App->fonts->Load("Resources/ui/Alphabetred.png", "0123456789abcdefghiklmnoprstuvwxyq<HIGH=!'�$%&/()-.�@ASD_GHJ", 6);
 	font_welcome_score = App->fonts->Load("Resources/ui/Alphabetwhite.png", "0123456789abcdefghiklmnoprstuvwxyq<HIGH=!'�$%&/()-.�@ASD_GHJ", 6);

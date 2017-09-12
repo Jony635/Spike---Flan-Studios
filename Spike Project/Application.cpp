@@ -24,10 +24,10 @@ Application::Application()
 	modules[i++] = input = new ModuleInput();
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = fonts = new ModuleFonts();
-	modules[i++] = food = new ModuleFood();
 	modules[i++] = menu = new MenuScene();
 	modules[i++] = howtoscene = new How_to_Play_Scene();
 	modules[i++] = mainscene = new InGameScene();
+	modules[i++] = food = new ModuleFood();
 	modules[i++] = player = new ModulePlayer();
 	modules[i++] = collision = new ModuleCollision();
 	modules[i++] = fade = new ModuleFadeToBlack();
@@ -52,6 +52,7 @@ bool Application::Init()
 	howtoscene->Disable();
 	collision->Disable();
 	player->Disable();
+	food->Disable();
 	// ----------------------------
 
 	for(int i = 0; i < NUM_MODULES && ret == true; ++i)

@@ -42,7 +42,7 @@ void ModuleFood::RelocateFruitsOnPan()
 	{
 		if (FOOD[i].State == FoodState::ON_PAN)
 		{
-			FOOD[i].position.x = App->mainscene->Panptr->position.x + 10;
+			FOOD[i].position.x = App->mainscene->Panptr->position.x + 80;
 			break;
 		}
 		
@@ -79,13 +79,14 @@ void ModuleFood::ClearFood()
 	}
 }
 
-void ModuleFood::AddFood(FoodTypes FoodType, uint speed, iPoint position)
+void ModuleFood::AddFood(FoodTypes FoodType, uint speed, int x)
 {
 	for (int i = 0; i < 50; ++i)
 	{
 		if (FOOD[i].Type == FoodTypes::NO_TYPE)
 		{
-			FOOD[i].position = position;
+			FOOD[i].position.x = x;
+			FOOD[i].position.y = App->mainscene->Panptr->position.y + 60;
 			FOOD[i].Type = FoodType;
 			FOOD[i].speed = speed;
 			FOOD[i].State = FoodState::ON_PAN;

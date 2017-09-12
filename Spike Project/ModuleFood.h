@@ -14,7 +14,6 @@ enum FoodTypes
 	ONION,
 	POOL_BALL,
 	SAUSAGE,
-	EGG,
 	CHICKEN,
 	COOKIE,
 	NACHO,
@@ -52,7 +51,7 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
-	void AddFood(FoodTypes FoodType, uint speed, iPoint position);
+	void AddFood(FoodTypes FoodType, uint speed, int x);
 	void OnCollision(Collider* c1, Collider* c2);
 
 	Food FOOD[50]; //En el Start se inicializa

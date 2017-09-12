@@ -22,6 +22,7 @@ bool InGameScene::Start() {
 	LOG("Loading main scene");
 	//Textures
 	App->textures->Enable();
+	App->food->Enable();
 	background = App->textures->Load("Resources/Spike/spike_backgrownd.png");//foto del fondo
 	
 	//Creating the Pan:
@@ -32,6 +33,7 @@ bool InGameScene::Start() {
 	Panptr->A = 200;
 	Panptr->T = 2;
 
+	App->food->AddFood(FoodTypes::COOKIE, 0, 0);
 	//items = App->textures->Load("Resources/Animations/Items.png");//foto del fondo
 	
 	//Enables & Disables
