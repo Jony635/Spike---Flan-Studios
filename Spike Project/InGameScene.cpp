@@ -33,8 +33,7 @@ bool InGameScene::Start() {
 	Panptr = new Pan();
 	Panptr->Anim = PanAnim;
 	Panptr->position = { (SCREEN_WIDTH / 2)+500, -172 };
-	Panptr->A = 200;
-	Panptr->T = 2;
+
 	
 	
 	
@@ -63,7 +62,9 @@ update_status InGameScene::Update(){
 	//Render Map
 
 	Panptr->Timer += 0.01f;
-	Panptr->w = (log(Panptr->Timer));
+	Panptr->w += 0.001;
+
+	//Panptr->w = 3*(log(Panptr->Timer));
 	Panptr->position.x = 150 + (Panptr->A*sin(Panptr->w*Panptr->Timer));
 
 	//Panptr->Timer += 0.01f;

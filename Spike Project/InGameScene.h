@@ -18,9 +18,9 @@ public:
 	Animation Anim;
 	iPoint position;
 	float T = 0.0f;
-	int A = 0;
+	int A = 200;
 	float Timer = 0.0f;
-	float w = 0.0f;
+	float w = 1.5f;
 	float FoodSpawnTimer = 0.0f;
 
 	bool IsPanEmpty();
