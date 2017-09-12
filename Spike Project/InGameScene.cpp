@@ -8,11 +8,13 @@
 #include "ModulePlayer.h"
 #include "ModuleCollision.h"
 #include "ModuleAudio.h"
+#include "ModuleFadeToBlack.h"
 
 
 InGameScene::InGameScene(){
 	//stair visible
 	PanAnim.PushBack({11, 11, 313, 152});
+	PanThrowingFood.PushBack({345, 29, 324, 136});
 }
 
 InGameScene::~InGameScene(){}
@@ -32,8 +34,14 @@ bool InGameScene::Start() {
 	Panptr->position = { (SCREEN_WIDTH / 2)+500, -172 };
 	Panptr->A = 200;
 	Panptr->T = 2;
+	
+	
+	
 
-	App->food->AddFood(FoodTypes::COOKIE, 0, 0);
+	
+	
+
+	App->food->AddFood(FoodTypes::COOKIE, 3, 0);
 	//items = App->textures->Load("Resources/Animations/Items.png");//foto del fondo
 	
 	//Enables & Disables
@@ -58,6 +66,13 @@ update_status InGameScene::Update(){
 
 	App->render->Blit(background, 0, - SCREEN_HEIGHT, NULL);
 	App->render->Blit(PanText, Panptr->position.x, Panptr->position.y, &Panptr->Anim.GetCurrentFrame(), true);
+
+	if (        (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN ||
+		App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_REPEAT ||
+		App->input->buttons[SDL_CONTROLLER_BUTTON_A] == KEY_DOWN ||
+		App->input->buttons[SDL_CONTROLLER_BUTTON_A] == KEY_REPEAT))
+		Panptr->Anim = PanThrowingFood;
+	else Panptr->Anim = PanAnim;
 
 	////Fade to black to next lvl
 	//if (App->input->keyboard[SDL_SCANCODE_F2]) {

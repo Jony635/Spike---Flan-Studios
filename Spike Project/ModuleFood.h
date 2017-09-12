@@ -61,6 +61,7 @@ public:
 	void BlitFood();
 	void RelocateFruitsOnPan();
 	void MoveFoodOnAir();
+	void ThrowUpFood();
 
 	SDL_Texture* FoodTexts = nullptr;
 

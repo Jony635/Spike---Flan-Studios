@@ -3,6 +3,7 @@
 #include "ModuleCollision.h"
 #include "ModuleRender.h"
 #include "InGameScene.h"
+#include "ModuleInput.h"
 
 ModuleFood::ModuleFood()
 {
@@ -28,7 +29,11 @@ bool ModuleFood::Start()
 
 update_status ModuleFood::Update()
 {
-
+	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN ||
+		App->input->buttons[SDL_CONTROLLER_BUTTON_A] == KEY_DOWN)
+	{
+		ThrowUpFood();
+	}
 
 	MoveFoodOnAir();
 	RelocateFruitsOnPan();
@@ -63,11 +68,23 @@ void ModuleFood::RelocateFruitsOnPan()
 
 void ModuleFood::BlitFood()
 {
-	for (int i = 0; i < 50; ++i)
+	for (int i = 0; i < MAXFOOD; ++i)
 	{
 		if (FOOD[i].Type != FoodTypes::NO_TYPE)
 		{
 			App->render->Blit(FoodTexts, FOOD[i].position.x, FOOD[i].position.y, &FOOD[i].Anim.frames[0], true);
+		}
+	}
+}
+
+void ModuleFood::ThrowUpFood()
+{
+	for (int i = 0; i < MAXFOOD; ++i)
+	{
+		if (FOOD[i].State == FoodState::ON_PAN)
+		{
+			FOOD[i].State = FoodState::ON_AIR;
+			break;
 		}
 	}
 }

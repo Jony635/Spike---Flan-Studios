@@ -98,7 +98,7 @@ update_status MenuScene::Update() {
 	{
 		if (Indicator == 0)
 		{
-			App->fade->FadeToBlack(this, App->mainscene, 0);
+			App->fade->FadeToBlack(this, App->mainscene, 0.5);
 		}
 		else if (Indicator == 1)
 		{

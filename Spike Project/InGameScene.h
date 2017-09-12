@@ -54,6 +54,7 @@ public:
 	SDL_Texture* background = nullptr;
 	SDL_Texture* PanText = nullptr;
 	Animation PanAnim;
+	Animation PanThrowingFood;
 	Pan* Panptr = nullptr;
 };
 
