@@ -111,6 +111,7 @@
     <ClInclude Include="MenuScene.h">
       <Filter>Screens</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -128,5 +129,11 @@
     <Filter Include="Food">
       <UniqueIdentifier>{29f6fd06-fe5b-405f-94ba-9aa5c40415e8}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Spike_FlanStudio.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Spike\spike_Icon.ico" />
   </ItemGroup>
 </Project>
