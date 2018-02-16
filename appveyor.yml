@@ -3,4 +3,4 @@ image: Visual Studio 2017
 build:
   verbosity: minimal
 artifacts:
- - path: test.zip
+ - path: Spike Project\Debug
