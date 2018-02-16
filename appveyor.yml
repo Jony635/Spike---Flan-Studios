@@ -10,4 +10,4 @@ after_build:
 
 artifacts:
   - path: Game.zip
-  - name: ReleaseBaby
+  #- name: ReleaseBaby
