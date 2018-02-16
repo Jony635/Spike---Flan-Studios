@@ -3,7 +3,7 @@ image: Visual Studio 2017
 build:
   verbosity: minimal
   
-bin\$(configuration)\*.dll
+# bin\$(configuration)\*.dll
 # bin\Spike Project\Debug\Spike_FlanStudio.exe
 
 artifacts:
