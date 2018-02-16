@@ -4,10 +4,10 @@ build:
   verbosity: minimal
 
 after_build:
-- 7z a Game.zip Spike Project\Debug\Spike_FlanStudio.exe
-- 7z a Game.zip Spike Project\Resources\*
-- 7z a Game.zip Spike Project\*.dll
-
+#- 7z a Game.zip Spike Project\Debug\Spike_FlanStudio.exe
+#- 7z a Game.zip Spike Project\Resources\*
+#- 7z a Game.zip Spike Project\*.dll
+- 7z a Game.zip %APPVEYOR_BUILD_FOLDER%\*
 artifacts:
   - path: Game.zip
   #- name: ReleaseBaby
