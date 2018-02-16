@@ -4,7 +4,7 @@ build:
   verbosity: minimal
   
 bin\$(configuration)\*.dll
-bin\Spike Project\Debug\Spike_FlanStudio.exe
+# bin\Spike Project\Debug\Spike_FlanStudio.exe
 
 artifacts:
   - path: bin
