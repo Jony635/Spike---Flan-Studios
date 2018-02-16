@@ -2,5 +2,6 @@ version: 1.0.{build}
 image: Visual Studio 2017
 build:
   verbosity: minimal
-artifacts:
- - path: Spike Project\Debug
+
+after_build:
+  - cmd: 7z a myapp.zip %APPVEYOR_BUILD_FOLDER%\Debug
