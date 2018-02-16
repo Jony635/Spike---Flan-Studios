@@ -4,5 +4,4 @@ build:
   verbosity: minimal
   
 artifacts:
-  - path: myapp.zip
-  - name: MyApp
+  - path: Spike Project
