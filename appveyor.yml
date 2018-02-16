@@ -4,7 +4,7 @@ build:
   verbosity: minimal
 
 after_build:
-  - cmd: 7z a myapp.zip %APPVEYOR_BUILD_FOLDER%\Debug
+  - cmd: 7z a myapp.zip %APPVEYOR_BUILD_FOLDER%\path\Debug
   
 artifacts:
   - path: myapp.zip
