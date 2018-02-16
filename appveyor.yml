@@ -5,3 +5,7 @@ build:
 
 after_build:
   - cmd: 7z a myapp.zip %APPVEYOR_BUILD_FOLDER%\Debug
+  
+artifacts:
+  - path: myapp.zip
+  - name: MyApp
