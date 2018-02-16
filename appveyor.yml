@@ -2,10 +2,12 @@ version: 1.0.{build}
 image: Visual Studio 2017
 build:
   verbosity: minimal
-  
-# bin\$(configuration)\*.dll
-# bin\Spike Project\Debug\Spike_FlanStudio.exe
+
+after_build:
+- 7z a Game.zip Spike Project\Debug\Spike_FlanStudio.exe
+- 7z a Game.zip Spike Project\Resources
+- 7z a Game.zip Spike Project\*.dll
 
 artifacts:
-  - path: bin
+  - path: Game.zip
   - name: ReleaseBaby
