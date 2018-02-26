@@ -12,3 +12,16 @@ after_build:
 artifacts:
   - path: SpikeFromAppveyor.zip
     name: ReleaseBaby
+    
+    
+notifications:
+  - provider: Email
+    to:
+      - jony635molina@gmail.com
+    subject: 'Build success 1.0.{build}{{status}}'
+    message: "Build compiles"
+    on_build_success: true
+    on_build_failure: false
+    on_build_status_changed: false
+
+
